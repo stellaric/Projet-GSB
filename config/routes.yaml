@@ -1,0 +1,27 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+
+#route accueil
+accueil:
+    path: /
+    controller: App\Controller\AccueilController::index
+
+# routes visiteur :
+connexion_visiteur:
+    path: /visiteur
+    controller: App\Controller\AccueilController::diriger
+
+menu_visiteur:
+    path: /visiteur/menu
+    controller: App\Controller\AccueilController::aller
+
+renseigner_visiteur:
+    path: /visiteur/renseigner
+    controller: App\Controller\AccueilController::seconnecter
+
+# routes comptable  : 
+connexion_comptable:
+    path: /connexionc
+    controller: App\Controller\AccueilController::Serendre

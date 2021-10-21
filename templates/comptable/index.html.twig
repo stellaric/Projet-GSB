@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comptable index{% endblock %}
+
+{% block body %}
+    <h1>Comptable index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Adresse</th>
+                <th>Cp</th>
+                <th>Login</th>
+                <th>Mdp</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for comptable in comptables %}
+            <tr>
+                <td>{{ comptable.id }}</td>
+                <td>{{ comptable.nom }}</td>
+                <td>{{ comptable.prenom }}</td>
+                <td>{{ comptable.adresse }}</td>
+                <td>{{ comptable.cp }}</td>
+                <td>{{ comptable.login }}</td>
+                <td>{{ comptable.mdp }}</td>
+                <td>
+                    <a href="{{ path('comptable_show', {'id': comptable.id}) }}">show</a>
+                    <a href="{{ path('comptable_edit', {'id': comptable.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('comptable_new') }}">Create new</a>
+{% endblock %}
